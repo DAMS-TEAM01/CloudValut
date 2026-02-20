@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starred - CloudFiles</title>
+    <title>Recent - CloudFiles</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="icons.css">
-    <link rel="stylesheet" href="list-view-fix.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/icons.css">
+    <link rel="stylesheet" href="../css/list-view-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -39,11 +39,11 @@
                     <i class="fa-solid fa-user-group"></i>
                     <span>Shared with me</span>
                 </a>
-                <a href="recent.html" class="nav-item">
+                <a href="recent.html" class="nav-item active">
                     <i class="fa-regular fa-clock"></i>
                     <span>Recent</span>
                 </a>
-                <a href="starred.html" class="nav-item active">
+                <a href="starred.html" class="nav-item">
                     <i class="fa-regular fa-star"></i>
                     <span>Starred</span>
                 </a>
@@ -74,11 +74,11 @@
                 <i class="fa-solid fa-user-group"></i>
                 <span>Shared</span>
             </a>
-            <a href="recent.html" class="bottom-nav-item">
+            <a href="recent.html" class="bottom-nav-item active">
                 <i class="fa-regular fa-clock"></i>
                 <span>Recent</span>
             </a>
-            <a href="starred.html" class="bottom-nav-item active">
+            <a href="starred.html" class="bottom-nav-item">
                 <i class="fa-regular fa-star"></i>
                 <span>Starred</span>
             </a>
@@ -173,7 +173,7 @@
                                 <span>Settings</span>
                             </button>
                             <div class="dropdown-divider"></div>
-                            <a href="index.html" class="dropdown-item">
+                            <a href="../index.html" class="dropdown-item">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                 <span>Logout</span>
                             </a>
@@ -185,31 +185,52 @@
             <!-- File Explorer -->
             <div class="file-explorer">
                 <div class="breadcrumb">
-                    <h2>Starred</h2>
+                    <h2>Recent</h2>
                     <div class="view-options">
-                        <button class="view-btn"><i class="fa-solid fa-list"></i></button>
-                        <button class="view-btn active"><i class="fa-solid fa-border-all"></i></button>
+                        <button class="view-btn active"><i class="fa-solid fa-list"></i></button>
+                        <button class="view-btn"><i class="fa-solid fa-border-all"></i></button>
                         <button class="info-btn"><i class="fa-solid fa-circle-info"></i></button>
                     </div>
                 </div>
 
                 <section class="section-group">
+                    <h3>Today</h3>
                     <div class="grid-row files">
-                        <div class="folder-card">
-                            <i class="fa-solid fa-star" style="color: #fbbf24;"></i>
-                            <span>Important Docs</span>
+                        <div class="file-card full-preview">
+                            <div class="img-preview" style="background-color: #ffd700;"></div>
+                            <div class="file-footer">
+                                <i class="fa-regular fa-image blue-icon"></i>
+                                <span>Banner_Final.png</span>
+                            </div>
                         </div>
+                    </div>
+                </section>
 
+                <section class="section-group">
+                    <h3>Yesterday</h3>
+                    <div class="grid-row files">
                         <div class="file-card">
                             <div class="file-preview">
-                                <i class="fa-regular fa-file-excel" style="color: #22c55e;"></i>
+                                <i class="fa-regular fa-file-pdf" style="color: #ef4444;"></i>
                             </div>
                             <div class="file-info">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <span class="file-name">Yearly Budget.xlsx</span>
-                                    <i class="fa-solid fa-star" style="font-size: 0.8rem; color: #fbbf24;"></i>
-                                </div>
-                                <span class="file-meta">Last opened Oct 15</span>
+                                <span class="file-name">Invoice_OCT.pdf</span>
+                                <span class="file-meta">Opened 4:32 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-group">
+                    <h3>Last Week</h3>
+                    <div class="grid-row files">
+                        <div class="file-card">
+                            <div class="file-preview">
+                                <i class="fa-regular fa-file-lines"></i>
+                            </div>
+                            <div class="file-info">
+                                <span class="file-name">Meeting Notes 10-22.txt</span>
+                                <span class="file-meta">Edited Oct 22</span>
                             </div>
                         </div>
                     </div>
@@ -217,7 +238,7 @@
             </div>
         </main>
     </div>
-    <script src="app.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>

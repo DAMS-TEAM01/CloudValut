@@ -4,12 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shared with me - CloudFiles</title>
+    <title>Trash - CloudFiles</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="icons.css">
-    <link rel="stylesheet" href="list-view-fix.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/icons.css">
+    <link rel="stylesheet" href="../css/list-view-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .trash-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .empty-trash-btn {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .empty-trash-btn:hover {
+            background: #fef2f2;
+            color: #ef4444;
+            border-color: #fecaca;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,7 +59,7 @@
                     <i class="fa-solid fa-laptop"></i>
                     <span>Computers</span>
                 </a>
-                <a href="shared.html" class="nav-item active">
+                <a href="shared.html" class="nav-item">
                     <i class="fa-solid fa-user-group"></i>
                     <span>Shared with me</span>
                 </a>
@@ -47,7 +71,7 @@
                     <i class="fa-regular fa-star"></i>
                     <span>Starred</span>
                 </a>
-                <a href="trash.html" class="nav-item">
+                <a href="trash.html" class="nav-item active">
                     <i class="fa-regular fa-trash-can"></i>
                     <span>Trash</span>
                 </a>
@@ -70,7 +94,7 @@
                 <i class="fa-solid fa-hard-drive"></i>
                 <span>Files</span>
             </a>
-            <a href="shared.html" class="bottom-nav-item active">
+            <a href="shared.html" class="bottom-nav-item">
                 <i class="fa-solid fa-user-group"></i>
                 <span>Shared</span>
             </a>
@@ -173,7 +197,7 @@
                                 <span>Settings</span>
                             </button>
                             <div class="dropdown-divider"></div>
-                            <a href="index.html" class="dropdown-item">
+                            <a href="../index.html" class="dropdown-item">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                 <span>Logout</span>
                             </a>
@@ -185,45 +209,32 @@
             <!-- File Explorer -->
             <div class="file-explorer">
                 <div class="breadcrumb">
-                    <h2>Shared with me</h2>
-                    <div class="view-options">
-                        <button class="view-btn active"><i class="fa-solid fa-list"></i></button>
-                        <button class="view-btn"><i class="fa-solid fa-border-all"></i></button>
-                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i></button>
+                    <h2>Trash</h2>
+                    <div class="trash-header-actions">
+                        <button class="empty-trash-btn">Empty Trash</button>
+                        <div class="view-options">
+                            <button class="view-btn"><i class="fa-solid fa-list"></i></button>
+                            <button class="view-btn active"><i class="fa-solid fa-border-all"></i></button>
+                            <button class="info-btn"><i class="fa-solid fa-circle-info"></i></button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Shared Files -->
+                <div class="info-banner"
+                    style="background-color: #f1f5f9; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    Items in trash are deleted forever after 30 days.
+                </div>
+
                 <section class="section-group">
                     <div class="grid-row files">
-                        <!-- Shared Folder -->
-                        <div class="folder-card" style="border-left: 4px solid #4F46E5;">
-                            <i class="fa-solid fa-folder-user"></i>
-                            <div style="display: flex; flex-direction: column; gap: 2px;">
-                                <span>Design Resources</span>
-                                <span class="file-meta" style="font-size: 0.7rem;">Shared by Sarah</span>
-                            </div>
-                        </div>
-
-                        <!-- Shared File -->
                         <div class="file-card">
                             <div class="file-preview">
-                                <i class="fa-regular fa-file-powerpoint" style="color: #d946ef;"></i>
-                                <div class="shared-badge"><i class="fa-solid fa-user-group"></i></div>
+                                <i class="fa-regular fa-image" style="color: #94a3b8; opacity: 0.5;"></i>
                             </div>
                             <div class="file-info">
-                                <span class="file-name">Q3 Presentation.pptx</span>
-                                <span class="file-meta">Shared by Mike • Yesterday</span>
-                            </div>
-                        </div>
-
-                        <div class="file-card">
-                            <div class="file-preview">
-                                <i class="fa-regular fa-file-code" style="color: #0ea5e9;"></i>
-                            </div>
-                            <div class="file-info">
-                                <span class="file-name">main.css</span>
-                                <span class="file-meta">Shared by Dev Team • 2 days ago</span>
+                                <span class="file-name"
+                                    style="text-decoration: line-through; color: #94a3b8;">Old_Logo.png</span>
+                                <span class="file-meta">Deleted today</span>
                             </div>
                         </div>
                     </div>
@@ -231,7 +242,7 @@
             </div>
         </main>
     </div>
-    <script src="app.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>

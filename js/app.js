@@ -27,9 +27,9 @@ function handleLogin(event) {
 
         setTimeout(() => {
             if (isAdmin) {
-                window.location.href = 'admin.html';
+                window.location.href = 'pages/admin.html';
             } else {
-                window.location.href = 'dashboard.html';
+                window.location.href = 'pages/dashboard.html';
             }
         }, 1500);
     }
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Simulate network request
             setTimeout(() => {
-                window.location.href = 'dashboard.html';
+                window.location.href = 'pages/dashboard.html';
             }, 800);
         });
     });
